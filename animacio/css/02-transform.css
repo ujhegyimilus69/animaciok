@@ -1,0 +1,126 @@
+/* =========================================================
+   2. LECKE – TRANSFORM (átalakítás)  –  KIINDULÓ FÁJL
+
+   A transform függvényei:
+     translate(x, y)  → elmozdít       (negatív y = FELFELÉ!)
+     rotate(fok)      → elforgat       (pl. 45deg)
+     scale(szám)      → méretez        (1 = eredeti, 2 = dupla)
+     skew(fok)        → megdönt
+
+   A transform önmagában NEM animál!
+   A sima mozgáshoz kell mellé a transition (1. lecke).
+
+   A feladatok leírása az oldalon (02-transform.html) olvasható.
+   A "TODO" helyére dolgozz!
+   ========================================================= */
+
+
+/* ---------- 2.1 A négy alapfüggvény ---------- */
+
+/* Mind a 4 doboz ugyanazt a transition-t kapja
+   (vesszővel több szelektornak adhatunk egyszerre stílust) */
+.box-translate,
+.box-rotate,
+.box-scale,
+.box-skew {
+    font-size: 13px;
+    /* TODO: transition a transform-ra, 0.5 s */
+    transition: transform 0.5s;
+}
+
+.box-translate:hover {
+    transform: translateX(20px) translateY(-20px);
+}
+
+.box-rotate:hover {
+    transform: rotate(45deg);
+}
+
+.box-scale:hover {
+    transform: scale(1.5);
+}
+
+.box-skew:hover {
+    transform: skew(20deg, -20deg);
+}
+
+
+/* ---------- 2.2 Transition nélkül ---------- */
+.box-ugrik {
+    background-color: #9b59b6;
+    /* ide most NEM kell transition! */
+}
+
+.box-ugrik:hover {
+    rotate: 45deg;/* TODO: 45 fokos forgatás */
+}
+
+
+/* ---------- 2.3 Több transform ---------- */
+.box-hibas,
+.box-helyes {
+    transition: transform 0.5s;
+}
+
+/* EZ A KÓD HIBÁS – ne javítsd, csak próbáld ki!
+   Forognia és nőnie kellene, de csak nő. Miért? */
+.box-hibas:hover {
+    background-color: #e74c3c;
+    transform: rotate(45deg);
+    transform: scale(1.3);
+}
+
+/* Itt írd meg helyesen! */
+.box-helyes:hover {
+    background-color: #2ecc71;
+    transform: rotate(45deg)
+    /* TODO: forgatás ÉS nagyítás */
+}
+
+
+/* ---------- 2.4 transform-origin (forgáspont) ---------- */
+
+/* Ez a rész KÉSZ: a szürke sávra hoverelve a dobozok elfordulnak */
+.origo-kozep,
+.origo-balfent,
+.origo-jobblent {
+    font-size: 13px;
+    transition: transform 0.6s;
+}
+
+.origo-sav {
+    background-color: #e3e6ee;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.origo-sav:hover .box {
+    transform: rotate(45deg);
+}
+
+/* TODO: állítsd be a forgáspontot (transform-origin: ...) */
+.origo-kozep    { }
+.origo-balfent  { }
+.origo-jobblent { }
+
+
+/* ---------- 2.5 Felemelkedő kártya ---------- */
+.kartya {
+    width: 180px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);   /* kis árnyék */
+    /* TODO: transition két tulajdonságra (transform, box-shadow) */
+}
+
+.kartya:hover {
+    /* TODO: felfelé 8px + 1.03-szoros méret (EGY transform sorban!) */
+    /* TODO: nagyobb árnyék, pl. 0 12px 20px rgba(0, 0, 0, 0.2) */
+}
+
+.kartya h3 {
+    margin-top: 0;
+    color: #2b3a67;
+}

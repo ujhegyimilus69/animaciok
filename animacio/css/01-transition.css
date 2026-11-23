@@ -1,0 +1,115 @@
+/* =========================================================
+   1. LECKE – TRANSITION (átmenet)  –  KIINDULÓ FÁJL
+
+   Felépítése (rövid írásmód):
+       transition: tulajdonság  időtartam  időzítés  késleltetés;
+       pl.  transition: background-color  1s  ease  0s;
+
+   FONTOS SZABÁLY:
+   A transition-t az ALAPÁLLAPOTRA írjuk (pl. .gomb),
+   NEM a :hover-re! Így a visszaút is sima lesz.
+
+   A feladatok leírása az oldalon (01-transition.html) olvasható.
+   A "TODO" helyére dolgozz!
+   ========================================================= */
+
+
+/* ---------- 1.1 Transition NÉLKÜL ---------- */
+.box-nincs {
+    background-color: #4a90e2;      /* kék */
+}
+
+.box-nincs:hover {
+    background-color: #e94e77;/* TODO: rózsaszín háttér */
+}
+
+
+/* ---------- 1.2 Transition-nel ---------- */
+.box-szin {
+    background-color: #4a90e2;
+    transition: background-color 3s, color 5s/* TODO: transition – melyik tulajdonság? mennyi idő alatt? */
+}
+
+.box-szin:hover {
+    background-color: #e94e77
+    ;/* TODO: rózsaszín háttér */
+}
+
+
+/* ---------- 1.3 Több tulajdonság ---------- */
+.box-tobb {
+    background-color: #4a90e2;
+    border-radius: 15px;
+    transition: background-color 0.5s, border-radius 2.5s;
+    /* TODO: transition két tulajdonságra, vesszővel elválasztva */
+}
+
+.box-tobb:hover {
+    background-color: #7b4ae2;/* TODO: lila szín + kör alak */
+    border-radius: 50%;
+}   
+
+
+/* ---------- 1.4 Időzítő függvények ---------- */
+
+/* A szürke "versenypálya" – KÉSZ, nem kell módosítani */
+.verseny {
+    background-color: #e3e6ee;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Kisebb dobozok, egymás alatt */
+.kicsi {
+    width: 90px;
+    height: 40px;
+    font-size: 13px;
+    margin: 6px 0;
+    /* TODO: transition a transform-ra, 2 s */
+    transition: 2s;
+}
+
+/* Ha az egér a sávon van → a benne lévő .kicsi dobozok mozognak */
+.verseny:hover .kicsi {
+    transform: translateX(300px);
+    /* TODO: 300px jobbra */
+}
+
+/* TODO: minden doboz kapja meg a saját időzítő függvényét
+   (transition-timing-function: ...) */
+.ease        {transition-timing-function: ease; }
+.linear      { transition-timing-function: linear;}
+.ease-in     { transition-timing-function: ease-in;}
+.ease-out    { transition-timing-function: ease-out;}
+.ease-in-out { transition-timing-function: ease-in-out;}
+
+
+/* ---------- 1.5 Késleltetés ---------- */
+.box-kesleltet {
+    background-color: #4a90e2;
+    /* TODO: tulajdonság | idő | időzítés | késleltetés */
+    transition: background-color 1s ease 0.5s;
+}
+
+.box-kesleltet:hover {
+    background-color: green;
+    /* TODO: zöld háttér */
+}
+
+
+/* ---------- 1.6 Valódi gomb ---------- */
+.gomb {
+    padding: 12px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f5a623;      /* narancs */
+    color: white;
+    cursor: pointer;
+    /* TODO: transition, 0.3 s */
+}
+
+.gomb:hover {
+    background-color: #c77d00;
+    /* TODO: sötétebb narancs */
+}

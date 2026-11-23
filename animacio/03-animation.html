@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Animation</title>
+    <!-- Közös kinézet (ezt nem kell módosítani) -->
+    <link rel="stylesheet" href="css/kozos.css">
+    <!-- Ebbe a fájlba dolgozol -->
+    <link rel="stylesheet" href="css/03-animation.css">
+</head>
+<body>
+    <nav>
+        <a href="01-transition.html">1. Transition</a>
+        <a href="02-transform.html">2. Transform</a>
+        <a href="03-animation.html">3. Animation</a>
+    </nav>
+
+    <!-- Ez a cím a 3.4-es feladatban fog beúszni -->
+    <h1 class="beuszo-cim">3. Animation – animáció</h1>
+    <p class="magyarazat">
+        Két lépés: 1) a <code>@keyframes</code>-ben <b>megrajzoljuk</b> a mozgást,
+        2) az <code>animation</code>-nel <b>rátesszük</b> egy elemre.
+        Nem kell hozzá hover, magától indul, és ismétlődhet.
+    </p>
+
+    <!-- ===== 3.1 ===== -->
+    <div class="pelda">
+        <h2>3.1 Az első animáció: from → to</h2>
+        <div class="sor">
+            <div class="box forgo">Forgok</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Készíts egy <code>forgas</code> nevű <code>@keyframes</code>-et:
+            0 foktól 360 fokig forgat. A doboz forogjon <b>3 s</b> alatt egy kört,
+            <b>egyenletesen</b> (<code>linear</code>), <b>végtelenül</b>.
+        </div>
+    </div>
+
+    <!-- ===== 3.2 ===== -->
+    <div class="pelda">
+        <h2>3.2 Több lépés százalékkal</h2>
+        <div class="sor">
+            <div class="box lukteto">Lüktetek</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> A doboz lüktessen: 0% → eredeti méret, 50% → 1.3-szoros,
+            100% → eredeti méret. Egy lüktetés 1.5 s, végtelenül ismétlődik.
+        </div>
+    </div>
+
+    <!-- ===== 3.3 ===== -->
+    <div class="pelda">
+        <h2>3.3 Oda-vissza: alternate</h2>
+        <!-- egymás alá tesszük őket, hogy könnyebb legyen összehasonlítani -->
+        <div class="sor egymas-alatt">
+            <div class="box csuszo normal">normal</div>
+            <div class="box csuszo oda-vissza">alternate</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Mindkét doboz csússzon <b>250px-et jobbra</b>, 2 s alatt, végtelenül.
+            A felső iránya <code>normal</code>, az alsóé <code>alternate</code> legyen.
+            Mi a különbség?
+        </div>
+    </div>
+
+    <!-- ===== 3.4 ===== -->
+    <div class="pelda">
+        <h2>3.4 A végállapot megtartása: forwards</h2>
+        <div class="sor">
+            <div class="box elhalvanyul-rossz">nincs forwards</div>
+            <div class="box elhalvanyul-jo">forwards</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b><br>
+            a) A lap tetején lévő <b>cím</b> úszzon be balról (-200px-ről), közben tűnjön elő
+            (<code>opacity</code> 0 → 1), 1 s alatt, és <b>maradjon</b> a helyén.<br>
+            b) Mindkét doboz halványuljon el (<code>opacity</code> 1 → 0.2), 2 s alatt,
+            1 s késleltetéssel. Az egyik <code>forwards</code>-szal, a másik anélkül.
+            Frissítsd az oldalt (F5) és figyeld meg a különbséget!
+        </div>
+    </div>
+
+    <!-- ===== 3.5 ===== -->
+    <div class="pelda">
+        <h2>3.5 Megállítás hoverre</h2>
+        <div class="sor">
+            <div class="box megallo">Állíts meg!</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> A doboz forogjon végtelenül (használd újra a 3.1-es
+            <code>forgas</code>-t, 4 s), de ha ráviszed az egeret, <b>álljon meg</b>.<br>
+            💡 <code>animation-play-state</code>
+        </div>
+    </div>
+
+    <!-- ===== 3.6 ===== -->
+    <div class="pelda">
+        <h2>3.6 Valódi példa: betöltésjelző</h2>
+        <div class="sor">
+            <div class="spinner"></div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> A kör már kész (csak a teteje kék). Forgasd 1 s alatt,
+            egyenletesen, végtelenül – és kész a betöltésjelző!
+        </div>
+    </div>
+</body>
+</html>

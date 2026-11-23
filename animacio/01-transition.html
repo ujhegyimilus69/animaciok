@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Transition</title>
+    <!-- Közös kinézet (ezt nem kell módosítani) -->
+    <link rel="stylesheet" href="css/kozos.css">
+    <!-- Ebbe a fájlba dolgozol -->
+    <link rel="stylesheet" href="css/01-transition.css">
+</head>
+<body>
+    <!-- Menü a leckék között -->
+    <nav>
+        <a href="01-transition.html">1. Transition</a>
+        <a href="02-transform.html">2. Transform</a>
+        <a href="03-animation.html">3. Animation</a>
+    </nav>
+
+    <h1>1. Transition – átmenet</h1>
+    <p class="magyarazat">
+        A <code>transition</code> két állapot között <b>simítja el</b> a változást.
+        Kell hozzá egy esemény, pl. <code>:hover</code> (ráviszed az egeret).<br>
+        Szabály: a transition-t mindig az <b>alapállapotra</b> írjuk, nem a <code>:hover</code>-re!
+    </p>
+
+    <!-- ===== 1.1 ===== -->
+    <div class="pelda">
+        <h2>1.1 Színváltás transition nélkül</h2>
+        <div class="sor">
+            <div class="box box-nincs">Hover</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Hoverre a doboz legyen rózsaszín (<code>#e94e77</code>).
+            Transition-t még NE írj! Figyeld meg: a szín azonnal "ugrik".
+        </div>
+    </div>
+
+    <!-- ===== 1.2 ===== -->
+    <div class="pelda">
+        <h2>1.2 Színváltás transition-nel</h2>
+        <div class="sor">
+            <div class="box box-szin">Hover</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Ugyanaz, mint az 1.1, de a szín <b>1 másodperc</b> alatt, simán változzon.
+        </div>
+    </div>
+
+    <!-- ===== 1.3 ===== -->
+    <div class="pelda">
+        <h2>1.3 Több tulajdonság egyszerre</h2>
+        <div class="sor">
+            <div class="box box-tobb">Hover</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Hoverre a doboz legyen lila (<code>#7b4ae2</code>) és <b>kör alakú</b>
+            (<code>border-radius: 50%</code>). A szín 0.5 s, a kör alak 1.5 s alatt változzon.<br>
+            💡 Több tulajdonság → vesszővel elválasztva.
+        </div>
+    </div>
+
+    <!-- ===== 1.4 ===== -->
+    <div class="pelda">
+        <h2>1.4 Időzítő függvények</h2>
+        <!-- A szürke sávra (.verseny) visszük az egeret, a benne lévő dobozok mozognak -->
+        <div class="verseny">
+            <div class="box kicsi ease">ease</div>
+            <div class="box kicsi linear">linear</div>
+            <div class="box kicsi ease-in">ease-in</div>
+            <div class="box kicsi ease-out">ease-out</div>
+            <div class="box kicsi ease-in-out">ease-in-out</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Ha az egér a szürke sávon van, minden doboz menjen <b>300px-et jobbra</b>
+            (<code>transform: translateX(300px)</code>), 2 másodperc alatt.
+            Mindegyik doboz azt az időzítő függvényt kapja, ami rá van írva.
+            Melyik ér be "a legszebben"?
+        </div>
+    </div>
+
+    <!-- ===== 1.5 ===== -->
+    <div class="pelda">
+        <h2>1.5 Késleltetés</h2>
+        <div class="sor">
+            <div class="box box-kesleltet">Hover</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Hoverre a doboz legyen zöld (<code>#2ecc71</code>) 1 s alatt,
+            de csak <b>fél másodperc várakozás</b> után kezdjen el változni.
+        </div>
+    </div>
+
+    <!-- ===== 1.6 ===== -->
+    <div class="pelda">
+        <h2>1.6 Valódi példa: gomb</h2>
+        <button class="gomb">Jelentkezem</button>
+        <div class="feladat">
+            <b>Feladat:</b> Hoverre a gomb legyen sötétebb narancs (<code>#c77d00</code>),
+            <b>0.3 s</b> alatt. (Gomboknál rövid idő kell, a hosszú átmenet idegesítő.)
+        </div>
+    </div>
+</body>
+</html>

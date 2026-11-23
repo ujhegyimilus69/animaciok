@@ -1,0 +1,117 @@
+/* =========================================================
+   3. LECKE – ANIMATION + @keyframes  –  KIINDULÓ FÁJL
+
+   Két lépés:
+     1) @keyframes nev { from {...} to {...} }   → a mozgás leírása
+     2) .elem { animation: nev 2s ...; }         → rátesszük az elemre
+
+   Rövid írásmód:
+     animation: név idő időzítés késleltetés ismétlés irány fill-mode;
+     pl. animation: forgas 3s linear 0s infinite normal none;
+
+   A feladatok leírása az oldalon (03-animation.html) olvasható.
+   A "TODO" helyére dolgozz!
+   ========================================================= */
+
+
+/* ---------- 3.1 Első animáció: from → to ---------- */
+
+/* TODO: 1. lépés – a mozgás leírása
+@keyframes forgas {
+    from { ... }
+    to   { ... }
+}
+*/
+
+.forgo {
+    background-color: #e67e22;
+    /* TODO: 2. lépés – rátesszük az elemre
+       animation-name, animation-duration,
+       animation-timing-function, animation-iteration-count */
+}
+
+
+/* ---------- 3.2 Százalékos lépések ---------- */
+
+/* TODO: @keyframes lukteles { 0% {...} 50% {...} 100% {...} } */
+
+.lukteto {
+    background-color: #e94e77;
+    /* TODO: animation (rövid írásmóddal, egy sorban) */
+}
+
+
+/* ---------- 3.3 animation-direction ---------- */
+
+/* A két doboz egymás alatt legyen – KÉSZ */
+.egymas-alatt {
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* TODO: @keyframes csuszas (0-ról 250px-re jobbra) */
+
+.csuszo {
+    font-size: 13px;
+    /* TODO: animation – mindkét doboz ugyanazt kapja */
+}
+
+.normal {
+    background-color: #95a5a6;
+    /* TODO: animation-direction */
+}
+
+.oda-vissza {
+    background-color: #27ae60;
+    /* TODO: animation-direction */
+}
+
+
+/* ---------- 3.4 animation-fill-mode ---------- */
+
+/* a) Beúszó cím */
+/* TODO: @keyframes beuszas (balról be + előtűnés) */
+
+.beuszo-cim {
+    /* TODO: animation – egyszer fut le, és a végén ott marad */
+}
+
+/* b) Elhalványuló dobozok */
+/* TODO: @keyframes halvanyulas (opacity 1 → 0.2) */
+
+.elhalvanyul-rossz {
+    font-size: 13px;
+    background-color: #e74c3c;
+    /* TODO: animation forwards NÉLKÜL */
+}
+
+.elhalvanyul-jo {
+    font-size: 13px;
+    background-color: #27ae60;
+    /* TODO: animation forwards-szal */
+}
+
+
+/* ---------- 3.5 Megállítás hoverre ---------- */
+.megallo {
+    font-size: 13px;
+    background-color: #8e44ad;
+    /* TODO: a 3.1-es "forgas" animáció újrahasznosítása, 4 s */
+}
+
+.megallo:hover {
+    /* TODO: megállítás */
+}
+
+
+/* ---------- 3.6 Betöltésjelző (spinner) ---------- */
+
+/* A kinézet KÉSZ: szürke kör, aminek csak a teteje kék */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #ddd;
+    border-top-color: #4a90e2;
+    border-radius: 50%;
+    /* TODO: forgasd! (a "forgas" animációt újra felhasználhatod) */
+}

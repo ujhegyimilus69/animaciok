@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Transform</title>
+    <!-- Közös kinézet (ezt nem kell módosítani) -->
+    <link rel="stylesheet" href="css/kozos.css">
+    <!-- Ebbe a fájlba dolgozol -->
+    <link rel="stylesheet" href="css/02-transform.css">
+</head>
+<body>
+    <nav>
+        <a href="01-transition.html">1. Transition</a>
+        <a href="02-transform.html">2. Transform</a>
+        <a href="03-animation.html">3. Animation</a>
+    </nav>
+
+    <h1>2. Transform – átalakítás</h1>
+    <p class="magyarazat">
+        A <code>transform</code> elmozdítja, elforgatja, nagyítja vagy megdönti az elemet.
+        Önmagában <b>nem animál</b> – a sima mozgáshoz kell mellé a <code>transition</code>.
+    </p>
+
+    <!-- ===== 2.1 ===== -->
+    <div class="pelda">
+        <h2>2.1 A négy alapfüggvény</h2>
+        <div class="sor">
+            <div class="box box-translate">translate</div>
+            <div class="box box-rotate">rotate</div>
+            <div class="box box-scale">scale</div>
+            <div class="box box-skew">skew</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Mind a négy doboz 0.5 s alatt változzon hoverre:<br>
+            • <b>translate:</b> 20px jobbra és 20px felfelé (<code>translate(20px, -20px)</code>)<br>
+            • <b>rotate:</b> forduljon el 45 fokot (<code>45deg</code>)<br>
+            • <b>scale:</b> legyen másfélszeres méretű<br>
+            • <b>skew:</b> dőljön meg 20 fokot
+        </div>
+    </div>
+
+    <!-- ===== 2.2 ===== -->
+    <div class="pelda">
+        <h2>2.2 Transform transition nélkül</h2>
+        <div class="sor">
+            <div class="box box-ugrik">Hover</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Hoverre a doboz forduljon el 45 fokot, de <b>transition nélkül</b>.
+            Hasonlítsd össze a 2.1 "rotate" dobozával!
+        </div>
+    </div>
+
+    <!-- ===== 2.3 ===== -->
+    <div class="pelda">
+        <h2>2.3 Több transform egyszerre</h2>
+        <div class="sor">
+            <div class="box box-hibas">Hibás</div>
+            <div class="box box-helyes">Helyes</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> A "Hibás" doboz kódja már meg van írva a CSS-ben – próbáld ki!
+            Forognia és nőnie kellene, de csak nő. Miért?<br>
+            A "Helyes" dobozt írd meg úgy, hogy hoverre <b>elforduljon 45 fokot ÉS 1.3-szoros</b> legyen.
+        </div>
+    </div>
+
+    <!-- ===== 2.4 ===== -->
+    <div class="pelda">
+        <h2>2.4 Forgáspont: transform-origin</h2>
+        <!-- A szürke sávra hoverelünk, nem a dobozra:
+             így forgás közben nem csúszik ki a doboz az egér alól -->
+        <div class="sor origo-sav">
+            <div class="box origo-kozep">közép</div>
+            <div class="box origo-balfent">bal felső</div>
+            <div class="box origo-jobblent">jobb alsó</div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> A forgatás már meg van írva (vidd az egeret a szürke sávra).
+            Állítsd be, hogy a dobozok más-más pont körül forogjanak:
+            középpont, bal felső sarok, jobb alsó sarok.
+        </div>
+    </div>
+
+    <!-- ===== 2.5 ===== -->
+    <div class="pelda">
+        <h2>2.5 Valódi példa: felemelkedő kártya</h2>
+        <div class="sor">
+            <div class="kartya">
+                <h3>HTML</h3>
+                <p>A weboldal váza.</p>
+            </div>
+            <div class="kartya">
+                <h3>CSS</h3>
+                <p>A weboldal kinézete.</p>
+            </div>
+            <div class="kartya">
+                <h3>JS</h3>
+                <p>A weboldal "agya".</p>
+            </div>
+        </div>
+        <div class="feladat">
+            <b>Feladat:</b> Hoverre a kártya emelkedjen fel <b>8px-et</b>, legyen picit nagyobb
+            (<code>1.03</code>), és kapjon nagyobb árnyékot. Minden 0.3 s alatt történjen.
+        </div>
+    </div>
+</body>
+</html>
